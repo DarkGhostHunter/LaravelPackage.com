@@ -113,6 +113,19 @@ PSR-4
 
 - Looking for `Vehicle\Air\Wings\Airplane` in `src/Air/Wings/Airplane.php`
 
+You may want to autoload some files only for development purposes, so these don't interfere with a normal installation. For that, add the PSR-4 and files inside the `autoload-dev` key. Here you would also found tests and stubs used for tests.
+
+```json
+"autoload-dev": {
+    "psr-4": {
+        "Tests\\": "tests/",
+    },
+    "files": [
+        "database/migrations/create_models_table.php"
+    ]
+}
+```
+
 ## Importing the Package Locally
 
 To help with development, you can require a local package in a local Laravel project.
